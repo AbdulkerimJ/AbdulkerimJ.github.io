@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   DESIGN TOKENS — Emerald & Neutral Zinc
+───────────────────────────────────────── */
+@theme {
+  /* Background */
+  --color-bg-primary: #09090b;
+  --color-bg-surface: #121215;
+  --color-bg-card: #18181b;
+
+  /* Text */
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #52525b;
+
+  /* Accent — Crisp Emerald */
+  --color-accent: #10b981;
+  --color-accent-bright: #34d399;
+  --color-accent-hover: #059669;
+  --color-accent-dim: rgba(16,185,129,0.1);
+  --color-accent-glow: rgba(16,185,129,0.2);
+
+  /* Borders */
+  --color-border: rgba(255,255,255,0.08);
+  --color-border-bright: rgba(16,185,129,0.3);
+
+  /* Font */
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ─────────────────────────────────────────
+   KEYFRAMES
+───────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-14px) rotate(1deg); }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(16,185,129,0); }
+  100% { box-shadow: 0 0 0 0  rgba(16,185,129,0); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes beam {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+
+/* ─────────────────────────────────────────
+   BASE
+───────────────────────────────────────── */
+@layer base {
+  *, ::before, ::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    background-color: #09090b;
+    color: #fafafa;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #09090b;
+
+    /* Subtle dot grid on zinc black */
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
+    background-size: 28px 28px;
+    background-attachment: fixed;
+  }
+
+  ::selection { background: rgba(16,185,129,0.25); color: #fff; }
+
+  :focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #09090b; }
+  ::-webkit-scrollbar-thumb { background: rgba(16,185,129,0.3); border-radius: 99px; }
+}
+
+/* ─────────────────────────────────────────
+   UTILITY CLASSES
+───────────────────────────────────────── */
+@layer utilities {
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(16,185,129,0.35), 0 0 60px rgba(16,185,129,0.15);
+  }
+  .glow-accent-sm {
+    box-shadow: 0 0 10px rgba(16,185,129,0.3);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-glass {
+    background: rgba(24,24,27,0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .card-glass-hover:hover {
+    background: rgba(30,30,36,0.85);
+    border-color: rgba(16,185,129,0.3);
+    box-shadow:
+      0 0 0 1px rgba(16,185,129,0.2),
+      0 20px 60px rgba(0,0,0,0.5),
+      0 0 40px rgba(16,185,129,0.06);
+    transform: translateY(-3px);
+  }
+  .border-glow {
+    border: 1px solid rgba(16,185,129,0.25);
+    box-shadow: 0 0 20px rgba(16,185,129,0.12);
+  }
+  .float-0 { animation: float      6s ease-in-out 0.0s infinite; }
+  .float-1 { animation: float      6s ease-in-out 0.9s infinite; }
+  .float-2 { animation: float-slow 7s ease-in-out 1.8s infinite; }
+  .float-3 { animation: float      6s ease-in-out 2.7s infinite; }
+  .fade-up { animation: fade-up 0.75s ease-out forwards; }
+  .fade-up-1 { animation: fade-up 0.75s ease-out 0.1s both; }
+  .fade-up-2 { animation: fade-up 0.75s ease-out 0.22s both; }
+  .fade-up-3 { animation: fade-up 0.75s ease-out 0.36s both; }
+  .fade-up-4 { animation: fade-up 0.75s ease-out 0.5s both; }
+  .pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
+}
