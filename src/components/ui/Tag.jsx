@@ -1,12 +1,18 @@
 import { twMerge } from 'tailwind-merge';
 
-export default function Tag({ children, className }) {
+export default function Tag({ children, className, size = 'md' }) {
+  const sizeClasses = {
+    sm: 'px-2 py-0.5 text-[11px]',
+    md: 'px-3 py-1 text-xs',
+  };
+
   return (
     <span
       className={twMerge(
-        'px-3 py-1 text-xs font-medium rounded-full border transition-all duration-200 cursor-default',
-        'bg-bg-primary/60 text-text-secondary border-border/60',
-        'hover:border-accent/40 hover:text-accent hover:shadow-[0_0_8px_rgba(16,185,129,0.15)]',
+        'inline-flex items-center font-semibold rounded-lg border transition-all duration-200 cursor-default',
+        'bg-white/[0.04] text-text-secondary border-white/[0.07]',
+        'hover:border-accent/40 hover:text-accent hover:bg-accent/5',
+        sizeClasses[size] || sizeClasses.md,
         className
       )}
     >

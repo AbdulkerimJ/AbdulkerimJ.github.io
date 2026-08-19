@@ -11,7 +11,7 @@ export const projects = [
     githubUrl: null, // Private for now
     caseStudyPath: '/projects/rihala',
     screenshot: '/assets/rihala-screenshot-1.png', // Placeholder name
-    featured: true,
+    featured: false,
   },
   {
     id: 'academic-records',
@@ -24,21 +24,7 @@ export const projects = [
     liveUrl: null,
     githubUrl: null,
     caseStudyPath: '/projects/academic-records',
-    screenshot: '/assets/academic-records-screenshot-1.png', // Placeholder name
-    featured: false,
-  },
-  {
-    id: 'bingo',
-    name: 'Bingo Application',
-    title: 'Web-based Bingo Game',
-    status: 'Completed',
-    type: 'Internship Project',
-    description: 'A web-based interactive Bingo application developed during a software engineering internship.',
-    stack: ['React', 'Tailwind CSS'],
-    liveUrl: null,
-    githubUrl: null,
-    caseStudyPath: '/projects/bingo',
-    screenshot: '/assets/bingo-screenshot-1.png', // Placeholder name
+    screenshot: '/assets/digital-academic-records.png',
     featured: false,
   }
 ];

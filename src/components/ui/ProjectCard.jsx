@@ -1,6 +1,6 @@
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { twMerge } from 'tailwind-merge';
+import Tag from './Tag';
 
 function StatusDot({ color = 'accent' }) {
   return (
@@ -23,18 +23,16 @@ export default function ProjectCard({ project }) {
 
           <div className="grid md:grid-cols-[1.1fr_1fr]">
             {/* Image */}
-            <div className="relative overflow-hidden min-h-[260px] md:min-h-[360px] bg-bg-surface/50">
+            <div className="relative overflow-hidden min-h-[260px] md:min-h-[360px] bg-gradient-to-br from-bg-surface/60 to-bg-card flex items-center justify-center p-8 md:p-12">
               {screenshot && (
                 <img
                   src={screenshot}
                   alt={`${name} preview`}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain rounded-xl shadow-2xl border border-white/10 transition-all duration-700 group-hover:scale-[1.03] group-hover:-translate-y-1.5 group-hover:shadow-[0_25px_50px_-12px_rgba(16,185,129,0.25)] group-hover:border-accent/30"
                   onError={e => e.target.style.display = 'none'}
                 />
               )}
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-bg-card/60 pointer-events-none hidden md:block" />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-card/80 to-transparent pointer-events-none md:hidden" />
+
 
               {/* Status badge over image */}
               <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-card/90 backdrop-blur-sm border border-white/10 text-xs font-bold text-text-secondary">
@@ -55,9 +53,9 @@ export default function ProjectCard({ project }) {
               {/* Stack */}
               <div className="flex flex-wrap gap-1.5 mb-8">
                 {stack.map(t => (
-                  <span key={t} className="px-2.5 py-1 text-[11px] font-semibold rounded-md bg-white/[0.05] border border-white/[0.07] text-text-secondary hover:border-accent/30 hover:text-accent transition-all duration-150">
+                  <Tag key={t} size="sm">
                     {t}
-                  </span>
+                  </Tag>
                 ))}
               </div>
 
@@ -93,16 +91,15 @@ export default function ProjectCard({ project }) {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Image */}
-      <div className="relative aspect-video overflow-hidden bg-bg-surface/50">
+      <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-bg-surface/60 to-bg-card flex items-center justify-center p-5 sm:p-8">
         {screenshot && (
           <img
             src={screenshot}
             alt={`${name} preview`}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full object-contain rounded-lg shadow-xl border border-white/10 transition-all duration-700 group-hover:scale-[1.04] group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.2)] group-hover:border-accent/20"
             onError={e => e.target.style.display = 'none'}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-card/90 to-transparent pointer-events-none" />
         <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-bg-card/90 backdrop-blur-sm border border-white/10 text-[10px] font-bold text-text-secondary">
           <StatusDot />
           {status}
@@ -117,11 +114,15 @@ export default function ProjectCard({ project }) {
 
         <div className="flex flex-wrap gap-1.5 mb-6">
           {stack.slice(0, 4).map(t => (
-            <span key={t} className="px-2 py-0.5 text-[10px] font-semibold rounded bg-white/[0.04] border border-white/[0.06] text-text-secondary">
+            <Tag key={t} size="sm">
               {t}
-            </span>
+            </Tag>
           ))}
-          {stack.length > 4 && <span className="px-2 py-0.5 text-[10px] font-semibold rounded bg-white/[0.04] border border-white/[0.06] text-text-muted">+{stack.length - 4}</span>}
+          {stack.length > 4 && (
+            <Tag size="sm" className="text-text-muted">
+              +{stack.length - 4}
+            </Tag>
+          )}
         </div>
 
         <div className="flex items-center gap-3 mt-auto">

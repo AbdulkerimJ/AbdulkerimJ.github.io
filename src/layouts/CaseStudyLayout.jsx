@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 export default function CaseStudyLayout() {
   return (
     <>
-      <div className="max-w-4xl mx-auto px-6 pt-28 pb-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-28 pb-6">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-sm font-semibold text-text-secondary hover:text-accent transition-colors duration-200 group"
@@ -13,7 +13,7 @@ export default function CaseStudyLayout() {
           Back to projects
         </Link>
       </div>
-      <div className="max-w-4xl mx-auto px-6 pb-32">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-32">
         <Outlet />
       </div>
     </>

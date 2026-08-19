@@ -1,4 +1,5 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import Tag from '@/components/ui/Tag';
 
 const cats = [
   { title: 'Frontend', skills: ['JavaScript', 'React', 'Tailwind CSS', 'React Router', 'Axios'] },
@@ -15,7 +16,7 @@ export default function Skills() {
     <section id="skills" className="py-32 relative" ref={ref}>
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-accent/60" />
@@ -46,12 +47,9 @@ export default function Skills() {
 
               <div className="flex flex-wrap gap-2">
                 {skills.map(skill => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 text-xs font-semibold rounded-lg border border-white/[0.06] bg-white/[0.03] text-text-secondary hover:border-accent/35 hover:text-accent hover:bg-accent/8 transition-all duration-150 cursor-default"
-                  >
+                  <Tag key={skill}>
                     {skill}
-                  </span>
+                  </Tag>
                 ))}
               </div>
             </div>

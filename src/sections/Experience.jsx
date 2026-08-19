@@ -1,11 +1,12 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import Tag from '@/components/ui/Tag';
 
 export default function Experience() {
   const ref = useScrollReveal();
 
   return (
     <section id="experience" className="py-32" ref={ref}>
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-accent/60" />
@@ -20,10 +21,7 @@ export default function Experience() {
         <div className="relative pl-10 md:pl-16">
 
           {/* Timeline track */}
-          <div
-            className="absolute left-0 top-2 bottom-0 w-px"
-            style={{ background: 'linear-gradient(to bottom, #10b981, rgba(16,185,129,0.2), transparent)' }}
-          />
+          <div className="absolute left-0 top-2 bottom-0 w-px bg-gradient-to-b from-accent via-accent/20 to-transparent" />
 
           {/* Glowing node */}
           <div className="absolute left-[-4px] top-2 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_16px_rgba(16,185,129,0.8)]" />
@@ -66,9 +64,9 @@ export default function Experience() {
             {/* Tech used */}
             <div className="flex flex-wrap gap-2 mt-7 pt-7 border-t border-white/[0.05]">
               {['React', 'Tailwind CSS', 'JavaScript'].map(t => (
-                <span key={t} className="px-3 py-1 text-[11px] font-semibold rounded-lg bg-white/[0.04] border border-white/[0.07] text-text-secondary">
+                <Tag key={t} size="sm">
                   {t}
-                </span>
+                </Tag>
               ))}
             </div>
           </div>

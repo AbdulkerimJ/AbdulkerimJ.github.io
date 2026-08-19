@@ -3,7 +3,6 @@ import RootLayout from '@/layouts/RootLayout';
 import HomePage from '@/pages/HomePage';
 import RihalaPage from '@/pages/RihalaPage';
 import AcademicRecordsPage from '@/pages/AcademicRecordsPage';
-import BingoPage from '@/pages/BingoPage';
 import CaseStudyLayout from '@/layouts/CaseStudyLayout';
 
 const router = createBrowserRouter([
@@ -18,7 +17,6 @@ const router = createBrowserRouter([
         children: [
           { path: 'rihala', element: <RihalaPage /> },
           { path: 'academic-records', element: <AcademicRecordsPage /> },
-          { path: 'bingo', element: <BingoPage /> },
         ],
       },
     ],

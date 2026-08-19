@@ -14,7 +14,7 @@ export default function Contact() {
         <div className="w-[600px] h-[300px] bg-[radial-gradient(ellipse,rgba(16,185,129,0.08)_0%,transparent_70%)]" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-accent/60" />
@@ -29,7 +29,6 @@ export default function Contact() {
 
           {/* Decorative corner blooms */}
           <div className="absolute -top-16 -left-16 w-56 h-56 bg-[radial-gradient(circle,rgba(16,185,129,0.08)_0%,transparent_70%)] pointer-events-none" />
-          <div className="absolute -bottom-16 -right-16 w-56 h-56 bg-[radial-gradient(circle,rgba(52,211,153,0.06)_0%,transparent_70%)] pointer-events-none" />
 
           <h2 className="text-4xl md:text-6xl font-black text-text-primary mb-5 tracking-tight">
             Let's build something{' '}

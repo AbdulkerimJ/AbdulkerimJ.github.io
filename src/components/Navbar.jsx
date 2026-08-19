@@ -66,7 +66,7 @@ export default function Navbar() {
         ? 'py-3 bg-[rgba(9,9,11,0.85)] backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_4px_32px_rgba(0,0,0,0.5)]'
         : 'py-5 bg-transparent'
     )}>
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
 
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2.5">
@@ -129,7 +129,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-[rgba(9,9,11,0.97)] backdrop-blur-2xl border-b border-white/[0.06]">
-          <nav className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1">
             {links.map(l => {
               const isActive = isHome && activeSection === l.id;
               return (

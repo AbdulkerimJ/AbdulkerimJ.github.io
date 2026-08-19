@@ -53,7 +53,7 @@ export default function RihalaPage() {
       {/* Main Image */}
       <div className="rounded-2xl overflow-hidden border border-border mb-16 bg-border/20 aspect-video flex items-center justify-center">
         {project.screenshot ? (
-          <img src={project.screenshot} alt="Rihala Dashboard" className="w-full h-full object-cover" onError={(e) => e.target.style.display = 'none'} />
+          <img src={project.screenshot} alt="Rihala Dashboard" className="w-full h-full object-contain" onError={(e) => e.target.style.display = 'none'} />
         ) : (
           <span className="text-text-secondary">Screenshot coming soon</span>
         )}

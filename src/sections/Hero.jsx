@@ -1,4 +1,5 @@
 import { ArrowUpRight, MapPin, Globe } from 'lucide-react';
+import SystemDesignViz from '../components/SystemDesignViz';
 
 /* ── Small reusable decorative chip ── */
 function Chip({ label, icon }) {
@@ -22,7 +23,7 @@ export default function Hero() {
         <div className="absolute bottom-0 -left-32 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.05)_0%,transparent_65%)]" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-[1fr_auto] gap-16 items-center pt-28 pb-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full grid md:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-center pt-28 pb-20 relative z-10">
 
         {/* ── LEFT — Text ── */}
         <div className="max-w-2xl">
@@ -95,48 +96,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── RIGHT — Profile photo with clean backdrop ── */}
-        <div className="hidden md:flex items-center justify-center relative w-[320px] flex-shrink-0">
+        {/* ── RIGHT — System Design Visualization ── */}
+        <div className="hidden md:flex items-center justify-center relative flex-shrink-0 w-[360px]">
 
-          {/* spinning ring decoration */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-accent/8 pointer-events-none"
-            style={{ animation: 'spin-slow 40s linear infinite' }}
-          />
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border border-accent/5 pointer-events-none"
-            style={{ animation: 'spin-slow 28s linear infinite reverse' }}
-          />
-
-          {/* Outer glow ring */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-80 h-80 rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.1)_0%,transparent_70%)]" />
-          </div>
-
-          {/* Photo frame */}
-          <div className="relative">
-            <div className="w-64 h-64 rounded-full overflow-hidden border-2 border-accent/25 shadow-[0_0_50px_rgba(16,185,129,0.15),0_24px_60px_rgba(0,0,0,0.5)] bg-bg-card relative">
-              {/* Placeholder avatar */}
-              <img
-                src="/assets/abdulkerim-profile-photo.jpg"
-                alt="Abdulkerim Jemal"
-                className="w-full h-full object-cover object-top"
-                onError={e => {
-                  e.target.style.display = 'none';
-                  e.target.nextElementSibling.style.display = 'flex';
-                }}
-              />
-              {/* Fallback initials */}
-              <div
-                style={{ display: 'none' }}
-                className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent/20 to-bg-card"
-              >
-                <span className="text-6xl font-black text-accent/50 select-none">AJ</span>
-              </div>
-              {/* Shine overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-card/40 via-transparent to-white/[0.04] pointer-events-none" />
-            </div>
-          </div>
+          <SystemDesignViz />
         </div>
 
       </div>
