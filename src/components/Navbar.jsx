@@ -70,10 +70,6 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2.5">
-          {/* Logo mark */}
-          <div className="w-8 h-8 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center group-hover:bg-accent/30 transition-all duration-300">
-            <span className="text-accent font-black text-sm leading-none">A</span>
-          </div>
           <span className="font-bold text-text-primary text-lg tracking-tight group-hover:text-accent transition-colors duration-300">
             Abdulkerim
           </span>

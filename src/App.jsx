@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Navigate } from 'react-router-dom';
 import RootLayout from '@/layouts/RootLayout';
 import HomePage from '@/pages/HomePage';
 import RihalaPage from '@/pages/RihalaPage';
@@ -19,6 +19,7 @@ const router = createBrowserRouter([
           { path: 'academic-records', element: <AcademicRecordsPage /> },
         ],
       },
+      { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
 ]);
