@@ -133,7 +133,7 @@ export default function RihalaPage() {
         <section>
           <h2 className="text-2xl font-bold text-text-primary mb-4">Challenges & Lessons Learned</h2>
           <p>
-            Designing the purchasing workflow was particularly challenging. It required careful state management on the frontend and transaction-like logic on the backend to ensure that supplier balances, inventory records, and payment logs remained perfectly synchronized. This project significantly deepened my understanding of data modeling and API design for complex business logic.
+            Building the system was challenging because it involved coordinating complex business workflows, server state, and transaction-based operations across multiple modules. Ensuring that related records such as payments, supplier balances, employee and contractor payments, and other financial data remained consistent required careful data modeling and backend logic. This project significantly deepened my understanding of data modeling, transactions, server-state management, and API design for complex business systems
           </p>
         </section>
 
