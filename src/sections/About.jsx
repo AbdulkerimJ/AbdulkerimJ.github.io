@@ -2,8 +2,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Server, Network, Cloud, Bot } from 'lucide-react';
 
 const interests = [
-  { label: 'Backend Engineering', icon: <Server className="w-4 h-4 text-accent/80" /> },
-  { label: 'System Design', icon: <Network className="w-4 h-4 text-accent/80" /> },
+  { label: 'Backend & System Design', icon: <Server className="w-4 h-4 text-accent/80" /> },
   { label: 'Cloud & Deployment', icon: <Cloud className="w-4 h-4 text-accent/80" /> },
   { label: 'AI Integration', icon: <Bot className="w-4 h-4 text-accent/80" /> },
 ];
