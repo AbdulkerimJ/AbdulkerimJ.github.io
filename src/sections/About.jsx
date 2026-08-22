@@ -12,7 +12,7 @@ export default function About() {
   const ref = useScrollReveal();
 
   return (
-    <section id="about" className="py-32 relative" ref={ref}>
+    <section id="about" className="py-16 md:py-32 relative" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Section label */}

@@ -81,12 +81,21 @@
     min-height: 100vh;
     overflow-x: hidden;
     background-color: #09090b;
+    -webkit-tap-highlight-color: transparent; /* Removes blue tap highlight */
 
     /* Subtle dot grid on zinc black */
     background-image:
       radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
     background-size: 28px 28px;
     background-attachment: fixed;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      -webkit-touch-callout: none; /* Prevents iOS popup */
+      -webkit-user-select: none; /* Prevents text selection */
+      user-select: none;
+    }
   }
 
   ::selection { background: rgba(16,185,129,0.25); color: #fff; }

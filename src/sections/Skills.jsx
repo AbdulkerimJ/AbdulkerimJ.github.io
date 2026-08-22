@@ -13,7 +13,7 @@ export default function Skills() {
   const ref = useScrollReveal();
 
   return (
-    <section id="skills" className="py-32 relative" ref={ref}>
+    <section id="skills" className="py-16 md:py-32 relative" ref={ref}>
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

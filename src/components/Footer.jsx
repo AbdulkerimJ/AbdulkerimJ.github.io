@@ -5,14 +5,10 @@ export default function Footer() {
   return (
     <footer className="relative">
       <div className="h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-10 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6 relative z-10">
 
         {/* Left */}
         <div className="flex items-center gap-3 text-center md:text-left">
-          <div className="w-8 h-8 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center">
-            <span className="text-accent font-black text-sm">A</span>
-          </div>
           <div>
             <p className="font-bold text-text-primary text-sm">Abdulkerim Jemal</p>
             <p className="text-text-muted text-xs mt-0.5">Software Engineer & Full-Stack Developer</p>

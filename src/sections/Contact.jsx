@@ -6,7 +6,7 @@ export default function Contact() {
   const ref = useScrollReveal();
 
   return (
-    <section id="contact" className="py-32 relative" ref={ref}>
+    <section id="contact" className="py-16 md:py-32 relative" ref={ref}>
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
 
       {/* Ambient glow behind the card */}

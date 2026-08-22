@@ -6,7 +6,7 @@ export default function Projects() {
   const ref = useScrollReveal();
 
   return (
-    <section id="projects" className="py-32 relative" ref={ref}>
+    <section id="projects" className="py-16 md:py-32 relative" ref={ref}>
       {/* Section dividers */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
