@@ -48,6 +48,21 @@ export default function RihalaPage() {
             Visit Live Demo <ArrowUpRight className="w-5 h-5" />
           </a>
         )}
+
+        {/* Demo Credentials */}
+        <div className="mt-6 inline-block bg-bg-surface border border-accent/30 rounded-xl px-6 py-4">
+          <p className="text-xs font-bold tracking-widest text-accent uppercase mb-3">🔑 Demo Credentials</p>
+          <div className="space-y-2 text-sm font-mono">
+            <div className="flex items-center gap-3">
+              <span className="text-text-secondary w-20">Email</span>
+              <span className="text-text-primary font-semibold select-all">kerimewa@gmail.com</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-text-secondary w-20">Password</span>
+              <span className="text-text-primary font-semibold select-all">123456</span>
+            </div>
+          </div>
+        </div>
       </header>
 
       {/* Main Image */}
