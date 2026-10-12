@@ -1,5 +1,6 @@
 import { projects } from '@/data/projects';
 import Tag from '@/components/ui/Tag';
+import { ArrowUpRight } from 'lucide-react';
 import { useEffect } from 'react';
 import PageMeta from '@/components/PageMeta';
 
@@ -34,6 +35,47 @@ export default function AcademicRecordsPage() {
           {project.stack.map(tech => (
             <Tag key={tech} className="bg-bg-surface">{tech}</Tag>
           ))}
+        </div>
+
+        {/* Live Links */}
+        <div className="flex flex-col sm:flex-row gap-4 mt-2">
+          {project.liveUrl && (
+            <div className="flex flex-col gap-3">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-medium transition-colors"
+              >
+                Admin Panel <ArrowUpRight className="w-5 h-5" />
+              </a>
+              {/* Demo Credentials — admin only */}
+              <div className="inline-block bg-bg-surface border border-accent/30 rounded-xl px-6 py-4">
+                <p className="text-xs font-bold tracking-widest text-accent uppercase mb-3">🔑 Demo Credentials</p>
+                <div className="space-y-2 text-sm font-mono">
+                  <div className="flex items-center gap-3">
+                    <span className="text-text-secondary w-20">Email</span>
+                    <span className="text-text-primary font-semibold select-all">superadmin@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-text-secondary w-20">Password</span>
+                    <span className="text-text-primary font-semibold select-all">12345678</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {project.publicUrl && (
+            <a
+              href={project.publicUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-medium transition-colors self-start"
+            >
+              Public Portal <ArrowUpRight className="w-5 h-5" />
+            </a>
+          )}
         </div>
       </header>
 
